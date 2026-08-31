@@ -2,7 +2,8 @@ import { Activity, ArrowUpRight, Orbit, Radio, Sparkles } from "lucide-react";
 
 export function HeroVisual() {
   return (
-    <div className="hero-visual" aria-label="A visual representation of the Vaxion operating layer" role="img">
+    <div className="hero-visual" aria-label="A visual representation of the Vaxion operating layer" data-parallax="true" data-reveal data-parallax-speed="0.08" role="img">
+      <div className="hero-visual__image" />
       <div className="hero-visual__wash" />
       <div className="hero-visual__grid" />
       <div className="hero-visual__orbit hero-visual__orbit--one" />

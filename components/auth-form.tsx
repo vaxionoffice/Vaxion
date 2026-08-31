@@ -111,6 +111,7 @@ export function AuthForm({ mode, nextPath = "/dashboard" }: { mode: "login" | "s
             </button>
           </div>
         </label>
+        {!isSignup && <Link className="auth-forgot" href="/forgot-password">Forgot your password?</Link>}
         {message && (
           <div className={`form-message form-message--${message.type}`} role="status">
             {message.type === "success" && <Check size={15} />}
@@ -125,6 +126,7 @@ export function AuthForm({ mode, nextPath = "/dashboard" }: { mode: "login" | "s
         {isSignup ? "Already have an account?" : "New to Vaxion?"}{" "}
         <Link href={isSignup ? "/login" : "/signup"}>{isSignup ? "Log in" : "Request access"}</Link>
       </p>
+      {isSignup && <p className="auth-secondary"><Link href="/verify-email">Need another confirmation email?</Link></p>}
     </div>
   );
 }

@@ -50,7 +50,7 @@ export default function Home() {
       <main>
         <section className="hero">
           <div className="container hero__grid">
-            <div className="hero__copy">
+            <div className="hero__copy" data-reveal data-reveal-delay="120">
               <div className="announcement"><span className="announcement__pulse" />Vaxion / Founder OS <span className="announcement__line" />Now in formation <ArrowUpRight size={14} /></div>
               <h1>Build from a <span>clearer signal.</span></h1>
               <p className="hero__lede">Vaxion is the operating layer for founders turning a hard-won idea into a company with momentum.</p>
@@ -139,7 +139,7 @@ export default function Home() {
         </section>
 
         <section className="section section--closing">
-          <div className="container closing-inner">
+          <div className="container closing-inner" data-reveal>
             <span className="eyebrow"><span className="eyebrow__mark" />The next move is yours</span>
             <h2>Good things get<br /><em>built on purpose.</em></h2>
             <Link className="button button--primary" href="/signup">Start with Vaxion <MoveUpRight size={17} /></Link>

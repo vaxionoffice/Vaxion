@@ -12,7 +12,7 @@ export function SectionHeading({
   align?: "left" | "center";
 }) {
   return (
-    <div className={`section-heading section-heading--${align}`}>
+    <div className={`section-heading section-heading--${align}`} data-reveal>
       <span className="eyebrow"><span className="eyebrow__mark" />{eyebrow}</span>
       <h2>{title}</h2>
       {copy && <p>{copy}</p>}

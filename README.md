@@ -8,6 +8,8 @@ This repository contains the starter experience:
 - Supabase email/password auth foundation with confirmation callback
 - Server-only Resend welcome email route
 - Protected founder dashboard shell with an intentional coming-soon state
+- Branded password recovery, email verification, 404, and error screens
+- Custom generated hero background and scroll-triggered motion system
 - Design and product decisions in [`docs/DEVELOPMENT_PLAN.md`](./docs/DEVELOPMENT_PLAN.md)
 
 ## Run locally
@@ -22,20 +24,31 @@ Open [http://localhost:3000](http://localhost:3000).
 
 The public site and dashboard preview render without credentials. The auth forms show a demo-mode message until Supabase is configured.
 
+Routes included:
+
+- `/` — landing page
+- `/login` and `/signup` — authentication
+- `/forgot-password`, `/reset-password`, `/verify-email` — account recovery and confirmation
+- `/dashboard` — protected founder workspace shell
+- `/auth/callback` — Supabase confirmation/recovery callback
+
 ## Environment variables
 
 ```bash
 NEXT_PUBLIC_SUPABASE_URL=
 NEXT_PUBLIC_SUPABASE_ANON_KEY=
 RESEND_API_KEY=
-RESEND_FROM_EMAIL=Vaxion <hello@your-domain.com>
-NEXT_PUBLIC_SITE_URL=http://localhost:3000
+RESEND_FROM_EMAIL=Vaxion <hello@vaxion.pro>
+NEXT_PUBLIC_SITE_URL=https://vaxion.pro
 ```
 
 For Supabase email confirmation, set the project Site URL and add these redirect URLs:
 
 - `http://localhost:3000/auth/callback`
 - `https://YOUR-VERCEL-DOMAIN.vercel.app/auth/callback`
+- `https://vaxion.pro/auth/callback`
+
+For production Supabase emails, configure Custom SMTP with Resend (`smtp.resend.com`, port `465` or `587`, username `resend`) and use a verified `@vaxion.pro` sender.
 
 `RESEND_API_KEY` and `RESEND_FROM_EMAIL` are server-side values. Never expose them as `NEXT_PUBLIC_*` variables.
 
