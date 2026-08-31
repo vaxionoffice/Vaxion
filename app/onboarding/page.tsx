@@ -9,7 +9,8 @@ import { redirect } from "next/navigation";
 
 export const metadata: Metadata = { title: "Set up your workspace" };
 
-export default async function OnboardingPage() {
+export default async function OnboardingPage({ searchParams }: { searchParams: Promise<{ edit?: string }> }) {
+  const params = await searchParams;
   let email = "preview@vaxion.co";
   let name = "Alex Founder";
   let workspace = "";
@@ -26,7 +27,7 @@ export default async function OnboardingPage() {
     workspace = (metadata.workspace_name as string | undefined) || "";
     stage = (metadata.founder_stage as string | undefined) || "";
     focus = (metadata.founder_focus as string | undefined) || "";
-    if (metadata.onboarding_completed === true) redirect("/dashboard");
+    if (metadata.onboarding_completed === true && params.edit !== "1") redirect("/dashboard");
   }
 
   return (

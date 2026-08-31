@@ -66,7 +66,7 @@ export function DashboardShell({ email, name, demo = false }: { email: string; n
             <div><span className="eyebrow"><span className="eyebrow__mark" />Vaxion / 01</span><h1>Good morning, {firstName}.</h1><p>The space between your signal and your next move is getting smaller.</p></div>
             <div className="dashboard-date"><span>Cycle</span><strong>01 <small>/ 04</small></strong><div className="cycle-bar"><i /><i /><i /><i /></div></div>
           </div>
-          <div className="dashboard-preview-note" data-reveal data-reveal-delay="80"><span className="dashboard-preview-note__dot" /><span><strong>{demo ? "Preview mode" : "Sample workspace"}</strong> These are starter signals to show the shape of your founder dashboard.</span><Link href="/onboarding">Edit workspace <ChevronRight size={14} /></Link></div>
+          <div className="dashboard-preview-note" data-reveal data-reveal-delay="80"><span className="dashboard-preview-note__dot" /><span><strong>{demo ? "Preview mode" : "Sample workspace"}</strong> These are starter signals to show the shape of your founder dashboard.</span><Link href="/onboarding?edit=1">Edit workspace <ChevronRight size={14} /></Link></div>
           <div className="dashboard-overview-grid">
             <section className="dashboard-panel dashboard-signal-panel" data-reveal data-reveal-delay="120">
               <div className="dashboard-panel__top"><span className="eyebrow"><span className="eyebrow__mark" />Current signal</span><span className="panel-tag">Preview data</span></div>
