@@ -41,10 +41,11 @@ For Supabase email confirmation, set the project Site URL and add these redirect
 
 ## Scripts
 
-- `npm run dev` — remove the Next.js cache and start the local development server
-- `npm run clean` — remove the `.next` build cache if a stale chunk error appears
+- `npm run dev` — start the local development server without touching another running server’s cache
+- `npm run dev:clean` — clear `.next` and start a fresh development server; stop any existing Vaxion server first
+- `npm run clean` — remove the `.next` build cache if a stale chunk error appears; stop active Next.js processes first
 - `npm run typecheck` — run TypeScript checks
-- `npm run build` — remove the cache and create a production build
+- `npm run build` — remove the cache and create a production build; do not run it alongside `npm run dev`
 - `npm run start` — serve the production build
 
 ## Product caveat

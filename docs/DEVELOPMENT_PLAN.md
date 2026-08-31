@@ -105,7 +105,7 @@ Type scale is intentionally compact and editorial: large display contrast, 16–
 - **Email:** Resend is called only from a server route. The browser never receives the Resend API key.
 - **Hosting:** Vercel. Relative URLs are used by browser-facing code, so the app works behind a Vercel preview URL.
 - **Local review:** If Supabase variables are absent, public pages render normally and auth surfaces explain that they are in demo mode instead of crashing.
-- **Build hygiene:** `dev` and `build` clear `.next` before compiling so interrupted or mixed dev/production builds cannot leave stale webpack chunk references behind.
+- **Build hygiene:** `dev` never deletes `.next` (so a second dev process cannot destroy a first process’s cache). Use `dev:clean` only after stopping existing Next.js processes; `build` clears `.next` before a standalone production build.
 
 ### Required environment variables
 
