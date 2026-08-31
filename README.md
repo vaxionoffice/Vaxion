@@ -24,6 +24,19 @@ Open [http://localhost:3000](http://localhost:3000).
 
 The public site and dashboard preview render without credentials. The auth forms show a demo-mode message until Supabase is configured.
 
+### Environment troubleshooting
+
+Environment files must be in the repository root, next to `package.json`:
+
+```text
+Vaxion/
+├── .env.local
+├── package.json
+└── app/
+```
+
+Use the exact variable names in `.env.example`. After creating or changing `.env.local`, stop the running server and start it again. Run `npm run check-env` to verify only the variable names and statuses; it never prints secret values. If you use `npm run start`, run `npm run build` after changing environment variables because public values are compiled during the build.
+
 Routes included:
 
 - `/` — landing page
@@ -58,6 +71,7 @@ For production Supabase emails, configure Custom SMTP with Resend (`smtp.resend.
 - `npm run dev` — start the local development server without touching another running server’s cache
 - `npm run dev:clean` — clear `.next` and start a fresh development server; stop any existing Vaxion server first
 - `npm run clean` — remove the `.next` build cache if a stale chunk error appears; stop active Next.js processes first
+- `npm run check-env` — verify environment variable names without printing their values
 - `npm run typecheck` — run TypeScript checks
 - `npm run build` — remove the cache and create a production build; do not run it alongside `npm run dev`
 - `npm run start` — serve the production build
