@@ -52,6 +52,8 @@ Vaxion is being shaped as a founder and entrepreneur operating layer: a place to
 ### Phase 4 — Founder dashboard shell
 
 - Authenticated shell with brand, navigation, user identity, and sign-out.
+- First-run onboarding at `/onboarding` stores the founder profile in Supabase user metadata.
+- Sample overview cards show the intended dashboard information architecture while product data models are being finalized.
 - Clear “Founder workspace is being assembled” coming-soon state.
 - Reserve the information architecture for future modules without pretending those modules are available.
 

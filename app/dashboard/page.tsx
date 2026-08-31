@@ -16,9 +16,12 @@ export default async function DashboardPage() {
     if (error || !data.user) {
       redirect("/login?next=/dashboard");
     }
+    if (data.user.user_metadata?.onboarding_completed !== true) {
+      redirect("/onboarding");
+    }
     email = data.user.email ?? email;
     name = (data.user.user_metadata?.full_name as string | undefined) || email.split("@")[0] || name;
   }
 
-  return <DashboardShell email={email} name={name} />;
+  return <DashboardShell demo={!isSupabaseConfigured} email={email} name={name} />;
 }

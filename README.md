@@ -29,7 +29,8 @@ Routes included:
 - `/` — landing page
 - `/login` and `/signup` — authentication
 - `/forgot-password`, `/reset-password`, `/verify-email` — account recovery and confirmation
-- `/dashboard` — protected founder workspace shell
+- `/onboarding` — first-run founder workspace setup
+- `/dashboard` — protected sample founder workspace shell
 - `/auth/callback` — Supabase confirmation/recovery callback
 
 ## Environment variables
