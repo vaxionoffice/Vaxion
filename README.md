@@ -41,9 +41,10 @@ For Supabase email confirmation, set the project Site URL and add these redirect
 
 ## Scripts
 
-- `npm run dev` — start the local development server
+- `npm run dev` — remove the Next.js cache and start the local development server
+- `npm run clean` — remove the `.next` build cache if a stale chunk error appears
 - `npm run typecheck` — run TypeScript checks
-- `npm run build` — create a production build
+- `npm run build` — remove the cache and create a production build
 - `npm run start` — serve the production build
 
 ## Product caveat

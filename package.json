@@ -3,8 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev --hostname 0.0.0.0",
-    "build": "next build",
+    "clean": "node scripts/clean-next.mjs",
+    "dev": "npm run clean && next dev --hostname 0.0.0.0",
+    "build": "npm run clean && next build",
     "start": "next start --hostname 0.0.0.0",
     "typecheck": "tsc --noEmit"
   },
